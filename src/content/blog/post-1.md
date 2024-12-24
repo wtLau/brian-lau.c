@@ -2,6 +2,10 @@
 title: 'About Me'
 publishDate: '2021-03-06'
 excerpt: 'Learn more about me, here I am answering some personal question.'
+seo:
+  image:
+    src: '/post-1.jpg'
+    alt: Mountains
 ---
 
 ## Some randome questions:

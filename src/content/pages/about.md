@@ -10,27 +10,23 @@ seo:
 
 ![Alt text for image](/about.jpeg)
 
-My name is Brian, and I am currently living in North Vancouver, Canada.
-
-Professionally, I am an web developer with an obsession for well-crafted design, building seamless experiences for users. I am big on growth and teamwork. If we are gonna build the future, lets have some fun doing it!
-
 When I am not in front of computer, I spend my time body building, making pour-over coffee, and enjoying time with friends and family in Vancouver.
 
-## Ethan Donovan - Web Developer based in Estonia
+## Brian Lau - Web Developer based in Vancouver, BC
 
-**Greetings!** I'm Ethan Donovan, a passionate web developer residing in the picturesque landscapes of [Estonia](https://en.wikipedia.org/wiki/Estonia). With a keen eye for design and a love for crafting seamless digital experiences, I bring a unique blend of creativity and technical expertise to the world of web development.
+**Greetings!** I'm Brian Lau, a passionate web developer residing in the picturesque landscapes of [Vancouver, BC](https://en.wikipedia.org/wiki/Vancouver). With a keen eye for design and a love for crafting seamless digital experiences, I bring a unique blend of creativity and technical expertise to the world of web development.
 
 ## Skills and Expertise
 
-I specialize in front-end and back-end development, utilizing the latest technologies to build responsive and user-friendly websites. My proficiency includes **HTML**, **CSS**, **JavaScript**, and frameworks such as **Astro.js** for dynamic and interactive user interfaces. On the server side, I'm well-versed in Node.js and have experience with database management systems like MongoDB.
+I specialize in front-end and back-end development, utilizing the latest technologies to build responsive and user-friendly websites. My proficiency includes **HTML**, **CSS**, **JavaScript**, and frameworks such as **Next.js**, **Astro.js** for dynamic and interactive user interfaces. On the server side. I'm well-versed in Node.js and have experience with database management systems like MongoDB, Prima, tRPC, Rest.
 
 ## Innovation and Problem-Solving
 
-I thrive on solving complex problems and transforming ideas into functional, elegant websites. Whether it's optimizing performance, implementing new features, or troubleshooting issues, I approach each challenge with enthusiasm and a commitment to delivering high-quality solutions.
+I thrive on solving complex problems and transforming ideas into functional, performant, accessibile websites. Whether it's optimizing performance, implementing new features, or troubleshooting issues, I approach each challenge with enthusiasm and a commitment to delivering high-quality solutions.
 
 ## Global Perspective, Local Impact
 
-Living in Estonia has not only influenced my appreciation for nature and culture but has also shaped my approach to web development. I understand the importance of creating digital solutions that resonate with local audiences while maintaining a global perspective.
+Living in Vancouver has not only influenced my appreciation for nature and culture but has also shaped my approach to web development. I understand the importance of creating digital solutions that resonate with local audiences while maintaining a global perspective.
 
 ## Continuous Learning
 

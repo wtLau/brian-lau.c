@@ -2,6 +2,7 @@
 title: 'Introduction to Fetch'
 publishDate: '2023-10-25'
 excerpt: "Exploring the Fetch API's intricate components in my personal journey, aiming to explain their complexities for a better understanding."
+isFeatured: true
 tags:
   - Web development
 seo:

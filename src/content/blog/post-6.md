@@ -2,6 +2,7 @@
 title: 'Intro to JSX'
 publishDate: '2023-02-04'
 excerpt: 'If you ever wondering what JSX is, how it is used, and why it was created. You might find this article useful'
+isFeatured: true
 tags:
   - Web
 seo:

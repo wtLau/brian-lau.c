@@ -1,14 +1,20 @@
-# Dante - Astro & Tailwind CSS Theme by justgoodui.com
+# Brian Lau's Website
 
-Dante is a single-author blog and portfolio theme for Astro.js. Featuring a minimal, slick, responsive and content-focused design. For more Astro.js themes please check [justgoodui.com](https://justgoodui.com/).
+Welcome! This is my personal website built with Astro. I like to write code and this is the place where fun things get shared. 
 
-![Dante Astro.js Theme](public/dante-preview.jpg)
+[Live Website Link: www.brian-lau.ca](https://www.brian-lau.ca)
 
-[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JustGoodUI/dante-astro-theme)
+## Find Me at
 
-If you click this☝️ button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify.
+Socials:
+- [GitHub](https://github.com/wtLau)
+- [LinkedIn](https://www.linkedin.com/in/brian-lau/)
+- [Twitter](https://twitter.com/brian_wtLau)
 
-## Theme Features:
+Mentorships:
+- [ADPList](https://adplist.org/mentors/brian-lau)
+
+## Key  Features:
 
 - ✅ Dark and light color mode
 - ✅ Hero section with bio
@@ -32,8 +38,6 @@ If you click this☝️ button, it will create a new repo for you that looks exa
 - @astrojs/rss - https://docs.astro.build/en/guides/rss/
 
 ## Project Structure
-
-Inside of Dante Astro theme, you'll see the following folders and files:
 
 ```text
 ├── public/
@@ -78,15 +82,10 @@ All commands are run from the root of the project, from a terminal:
 
 Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
+
+
 ## Credits
 
-- Demo content generate with [Chat GPT](https://chat.openai.com/)
+- [Ovidius](https://github.com/JustGoodUI/ovidius-astro-theme) is a free single author blog theme.
 - Images for demo content from [Unsplash](https://unsplash.com/)
 
-## Astro Themes by Just Good UI
-
-- [Ovidius](https://github.com/JustGoodUI/ovidius-astro-theme) is a free single author blog theme.
-
-## License
-
-Licensed under the [GPL-3.0](https://github.com/JustGoodUI/dante-astro-theme/blob/main/LICENSE) license.

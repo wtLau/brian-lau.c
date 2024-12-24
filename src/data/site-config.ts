@@ -38,9 +38,9 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    title: 'Dante',
-    subtitle: 'Minimal Astro.js theme',
-    description: 'Astro.js and Tailwind CSS theme for blog and portfolio by justgoodui.com',
+    title: 'Brian Lau',
+    subtitle: 'Personal blog website built with Astro.js',
+    description: 'Brian share thoughts about software development, front-end, programming and learnings',
     image: {
         src: '/dante-preview.jpg',
         alt: 'Dante - Astro.js and Tailwind CSS theme'
@@ -50,10 +50,10 @@ const siteConfig: SiteConfig = {
             text: 'Home',
             href: '/'
         },
-        {
-            text: 'Projects',
-            href: '/projects'
-        },
+        // {
+        //     text: 'Projects',
+        //     href: '/projects'
+        // },
         {
             text: 'Blog',
             href: '/blog'
@@ -76,28 +76,24 @@ const siteConfig: SiteConfig = {
             text: 'Terms',
             href: '/terms'
         },
-        {
-            text: 'Download theme',
-            href: 'https://github.com/JustGoodUI/dante-astro-theme'
-        }
     ],
     socialLinks: [
         {
-            text: 'Dribbble',
-            href: 'https://dribbble.com/'
+            text: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/brian-lau'
         },
         {
             text: 'Instagram',
-            href: 'https://instagram.com/'
+            href: 'https://www.instagram.com/brian.laulau/'
         },
         {
-            text: 'X/Twitter',
-            href: 'https://twitter.com/'
+            text: 'Github',
+            href: 'https://github.com/wtlau'
         }
     ],
     hero: {
         title: 'Hi There & Welcome to My Corner of the Web!',
-        text: "I'm **Ethan Donovan**, a web developer at Amazing Studio, dedicated to the realms of collaboration and artificial intelligence. My approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products. I have a profound appreciation for top-notch software, visual design, and the principles of product-led growth. Feel free to explore some of my coding endeavors on <a href='https://github.com/JustGoodUI/dante-astro-theme'>GitHub</a> or follow me on <a href='https://twitter.com/justgoodui'>Twitter/X</a>.",
+        text: "I'm **Brian Lau**, a web developer at Arcteryx, dedicated to the realms of software engineering and frontend development. My approach involves embracing intuition, conducting just enough research, and leveraging aesthetics as a catalyst for exceptional products. I have a profound appreciation for top-notch software, visual design, and the principles of product-led growth. Feel free to explore some of my coding endeavors on <a href='https://github.com/wtlau'>GitHub</a>.",
         image: {
             src: '/hero.jpeg',
             alt: 'A person sitting at a desk in front of a computer'
@@ -110,11 +106,11 @@ const siteConfig: SiteConfig = {
         ]
     },
     subscribe: {
-        title: 'Subscribe to Dante Newsletter',
-        text: 'One update per week. All the latest posts directly in your inbox.',
+        title: 'Subscribe to Brian Newsletter',
+        text: 'One update per year. All the latest posts directly in your inbox.',
         formUrl: '#'
     },
-    postsPerPage: 8,
+    postsPerPage: 20,
     projectsPerPage: 8
 };
 

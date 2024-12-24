@@ -2,6 +2,7 @@
 title: 'Learning Rust'
 publishDate: '2023-05-23'
 excerpt: "Brian's thought process in the shift to Rust for frontend development, highlighting its benefits in control, safety, reliability, and performance."
+isFeatured: true
 tags:
   - Rust
 seo:
