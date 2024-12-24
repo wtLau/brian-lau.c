@@ -1,58 +1,119 @@
 ---
-title: 'The Rise of Headless CMS: What You Need to Know'
-excerpt: In the ever-evolving landscape of content management systems (CMS), a new player has been gaining significant traction - the headless CMS.
-publishDate: 'Nov 14 2023'
+title: 'Managing Server and App State'
+publishDate: '2021-05-11'
+excerpt: 'Understand the difference between server and client state, and use React-Query and SWR for managing cache.'
 tags:
-  - Security
-  - UX
-  - Web
+  - Web development
 seo:
   image:
     src: '/post-10.jpg'
-    alt: Light straight lines
+    alt: Mountains
 ---
 
-![Light straight lines](/post-10.jpg)
+![Mountains](/post-10.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+Hello, thank you for checking this blog post. In this blog, I hope to help clarify to the difference in **server state** and **client state**, and suggest a pattern to reduce engineer time and boost developer experience to managing state.
 
-In the ever-evolving landscape of content management systems (CMS), a new player has been gaining significant traction - the headless CMS. This innovative approach to content management is reshaping the way businesses deliver content across various digital channels. Let's delve into the rise of **headless CMS** and what you need to know about this transformative technology.
+As a developer, it is important to recognize the fact that these two are inherently different problems and should be treated differently. I've made the mistake of putting every data in a state management tool as a centralized source of truth in hope to make things simpler. As you'd imagine, it's a nightmare to cover edge cases and ensure everything is in sync and up to date. **Server state should be treated as cache and grant the client with quick access**.
 
-## Understanding Headless CMS
+## Common State Types
 
-Traditional CMS solutions have been the backbone of managing and delivering content for websites and applications. However, they often come with limitations, especially when it comes to flexibility and scalability. This is where headless CMS comes into play.
+Below is a list of common state that may exist in your application.
 
-> Headless CMS empowers content creators to think beyond the webpage, fostering a mindset where content is liberated from presentation constraints, ready to reach audiences across diverse digital touchpoints.
+- Client State
+  - State that's only useful for control interactive part of the UI
+  - E.g: Theme, Dark mode, modals open
+- Server Cache State
+  - State persisted and owned by the server, and accessed by the client
+  - E.g: API calls, Response data
+- Component state
+  - State that component (React) needs to detect changes for re-rendering
+  - E.g: Values, loading
+- Form State
+  - Various state to validate a form
+  - E.g: isPristine, isTouch, validation,
+- URL State
+  - State persisted by the browser
+  - E.g: Query parameter, pagination, page ID
+- State Machine
+  - A finite-state machine refer to a mathematical model of computation
 
-A headless CMS is fundamentally different from traditional CMS architectures. Instead of being tightly coupled with a specific frontend presentation layer, a headless CMS focuses solely on content creation and storage. The "head" or frontend layer is decoupled, allowing for more flexibility and agility in content delivery.
+## Different State Management Tools
 
-## Benefits of Headless CMS
+Here's is list of popular tools that are being used by the industry.
 
-1. **Flexibility and Omnichannel Delivery:**
-   Headless CMS enables content to be created and stored without being tied to a specific presentation format. This flexibility allows businesses to deliver content seamlessly across various channels, including websites, mobile apps, IoT devices, and more.
+- [useState/Reducer + Context Hook](https://reactjs.org/docs/hooks-intro.html)
+- [Redux](https://redux-form.com/7.0.3/docs/gettingstarted.md/)
+- [Mobx](https://mobx.js.org/README.html)
+- [xState](https://github.com/davidkpiano/xstate)
+- [jotai](https://github.com/pmndrs/jotai)
+- [React-Query](https://react-query.tanstack.com/)
+- [SWR](https://swr.vercel.app/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
 
-2. **Improved Developer Productivity:**
-   Developers appreciate the freedom headless CMS provides. With the separation of concerns between content creation and presentation, developers can choose the most suitable technology stack for each aspect. This leads to increased productivity and the ability to adapt to evolving technologies.
+## Property of App State Vs Server State
 
-3. **Enhanced Performance:**
-   Since headless CMS eliminates the need for a monolithic system, the performance of your digital properties can be optimized. This is especially crucial in today's fast-paced digital landscape, where users expect instantaneous and responsive experiences.
+Below are some of the main difference between an client state and server state:
 
-4. **Easier Content Updates:**
-   With headless CMS, content updates can be made independently of the frontend. This means that content creators can modify and publish content without waiting for developers to implement changes on the presentation layer, resulting in a more streamlined workflow.
+| App             | Server               |
+| --------------- | -------------------- |
+| Non-Persistent  | Remotely Persisted   |
+| Synchronous     | Asynchronous         |
+| Client-Owned    | Shared Ownership     |
+| Reliable Update | Potentially Outdated |
 
-## Challenges and Considerations
+## Let's Cut to the Chase!
 
-While headless CMS offers numerous advantages, it's essential to be aware of potential challenges:
+Both [React-Query](https://react-query.tanstack.com/) and
+[SWR](https://swr.vercel.app/) provide good solution. And [Apollo Client](https://www.apollographql.com/docs/react/) if you're using GraphQL. Give it a try, I believe you would be happy to use any of these.
 
-1. **Learning Curve:**
-   Adopting a headless CMS may require a learning curve for both content creators and developers, as it deviates from the traditional CMS model.
+They will not only help you remove a handful lines of complicated code and make your application more maintainable, but have a direct impact for your users because it will feel faster and more responsive.
 
-2. **Integration Complexity:**
-   Integrating a headless CMS with existing systems and tools can be complex. However, once implemented, the flexibility it provides often outweighs the initial integration challenges.
+The most beautiful thing is that there will be only 1 request sent to the API, because they use the same key and the request is deduped, cached and shared automatically.
 
-3. **Content Preview:**
-   Previewing content in the context of the final presentation can be challenging in a headless CMS. Solutions like API-based previews are emerging to address this concern.
+[SWR](https://swr.vercel.app/)
 
-## Conclusion
+```jsx
+import useSWR from 'swr'
 
-The rise of headless CMS marks a paradigm shift in the way organizations manage and deliver content. While it presents challenges, the flexibility, scalability, and improved developer workflows make it an attractive option for businesses looking to future-proof their digital experiences. As the digital landscape continues to evolve, staying informed about emerging technologies like headless CMS is crucial for businesses aiming to stay ahead of the curve.
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
+
+function Profile() {
+  const { data, error } = useSWR('/api/user/123', fetcher)
+
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
+
+  // render data
+  return <div>hello {data.name}!</div>
+}
+```
+
+[React-Query](https://react-query.tanstack.com/)
+
+```jsx
+import { useQuery } from 'react-query'
+
+export default function App() {
+  const { isLoading, isError, data, error } = useQuery('todos', fetchTodoList)
+
+  if (isLoading) return <span>Loading...</span>
+
+  if (isError) return <span>Error: {error.message}</span>
+
+  // We can assume by this point that `isSuccess === true`, and render data
+  return (
+    <ul>
+      {data.map((todo) => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
+    </ul>
+  )
+}
+```
+
+## Thank You for Reading!
+
+While state management has been nuanced in building applications at scale, I think having a good grasp of various types of state and understanding their trade-offs would help developing apps easier.
+
+I hope you find this post useful, and if you have any comment or suggestion, feel free to tweet or make a pull request. Cheers.

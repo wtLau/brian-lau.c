@@ -1,10 +1,9 @@
 ---
-title: 'The Evolution of Front-End Development: A Journey Through Time'
-excerpt: Choosing the right framework for your web project is a critical decision that can significantly impact the development process and the success of your project. With so many options available, it's essential to consider various factors before making a choice.
-publishDate: 'October 9 2023'
+title: 'Intro to JSX'
+publishDate: '2023-02-04'
+excerpt: 'If you ever wondering what JSX is, how it is used, and why it was created. You might find this article useful'
 tags:
   - Web
-  - Guide
 seo:
   image:
     src: '/post-6.jpg'
@@ -13,42 +12,131 @@ seo:
 
 ![Walking person silhouette](/post-6.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+💡 This was released on [My YouTube Channel](https://www.youtube.com/@lauwangtatbrian), check it out at [Let's talk about JSX](https://www.youtube.com/watch?v=lt9ACV8yzo8&t=38s) 💡
 
-Front-end development has come a long way since the early days of the World Wide Web. From static HTML pages to dynamic and interactive web applications, the evolution of front-end development has been nothing short of remarkable. In this post, we'll take a fascinating journey through time to explore how front-end development has evolved over the years.
+## What's JSX
 
-## The Static HTML Era (1990s - Early 2000s)
+Spoiler! 👻 JSX is not an airline
 
-In the early days of the web, front-end development primarily involved creating static HTML pages. These pages were simple, text-heavy, and often lacked the visual and interactive elements we take for granted today. Cascading Style Sheets (CSS) started to gain popularity during this era, allowing developers to style web pages and make them more visually appealing.
+## Why JSX
 
-## The Rise of JavaScript (Late 1990s - Early 2000s)
+Before introducing JSX, I want you to think about how we can manipulate HTML?
 
-JavaScript emerged as a powerful tool for adding interactivity to web pages. This era witnessed the birth of technologies like DHTML (Dynamic HTML), which allowed developers to create dynamic and animated web content. This marked the beginning of a more engaging web experience.
+```html
+<div>
+  <h1>How can this text be changed?</h1>
+</div>
+```
 
-## The Era of Browser Wars (Late 1990s - Early 2000s)
+To be able to dynamically change the content, we’d need some help from JS:
 
-During this period, web developers faced challenges due to the "browser wars" between Internet Explorer and Netscape Navigator. Cross-browser compatibility became a significant concern, leading to the development of various JavaScript libraries and frameworks to help tackle these issues.
+The setup
 
-## The Web 2.0 Revolution (Mid-2000s)
+```js
+// Create h1 element in memory
+const h1 = document.createElement('hi');
+h1.textContent = 'Still unchanged 😢';
 
-Web 2.0 brought about a shift in front-end development. Websites started to become more interactive and user-centric. Ajax (Asynchronous JavaScript and XML) became a key technology, enabling seamless data retrieval and updates without requiring full page reloads.
+// We need to update the DOM
+const dom = document.getElementById('app');
+dom.append(h1);
 
-## Responsive Web Design (2010s)
+// To actually update it:
+dom.getElementByTagName('h1')[0].textContent = "It's fianlly changed!";
+```
 
-With the proliferation of smartphones and tablets, responsive web design became essential. Front-end developers had to adapt to building websites that could gracefully resize and restructure themselves to fit various screen sizes. This era saw the widespread use of CSS frameworks like Bootstrap and Foundation.
+Now its updated. Problem is, no one would write nor read this! We want something that’s Modular, Composable, Reusable.
 
-## The Era of JavaScript Frameworks (2010s - Present)
+In modern days, we have very good UX. So okay now think about this:
 
-JavaScript frameworks like Angular, React, and Vue.js transformed front-end development. They introduced concepts like component-based architecture and virtual DOM, making it easier to build complex, dynamic web applications. Single-page applications (SPAs) became increasingly popular, providing smoother user experiences.
+```jsx
+<div>
+  <h1>This has to be updated many times</h1>
+</div>
+```
 
-## The Progressive Web App (PWA) Movement (2010s - Present)
+Sure, you’d want some sort of **tokens** to represent \***\*X\*\*** to dynamically change it . This is where JSX shines!
 
-PWAs combined the best of web and mobile app experiences. Front-end developers started focusing on creating websites that not only worked well on browsers but also functioned offline, provided push notifications, and offered a more app-like experience to users.
+```jsx
+const Title = () => {
+  const [count, setCount] = callbackFunction(0); // Hook is beyond the scope of JSX
 
-## WebAssembly and Beyond (Present - Future)
+  return (
+    <div>
+      <h1>This changed {count} times!</h1>
+    </div>
+  );
+};
+```
 
-WebAssembly (Wasm) is an emerging technology that allows running compiled code in web browsers at near-native speed. It opens up possibilities for front-end developers to build high-performance web applications and even port existing applications from other languages.
+---
 
-## Conclusion
+## Facts
 
-Front-end development has evolved significantly, from static HTML pages to dynamic, responsive, and highly interactive web applications. With emerging technologies and ongoing advancements, the journey of front-end development continues to be exciting. As front-end developers, it's essential to stay updated, adapt to new trends, and embrace the ever-changing landscape of web development to create compelling user experiences on the internet.
+✅ JSX is actually a spec
+
+✅ **JSX is an XML-like syntax extension to ECMAScript without any defined semantics**
+
+✅ It's intended to be used by various preprocessors (transpilers) to transform these tokens into standard ECMAScript
+
+❌  **It's NOT a proposal to incorporate JSX into the ECMAScript spec itself**
+
+❌  It's **NOT** intended to be implemented by engines or browsers
+
+---
+
+## And More …
+
+- Generic but well defined syntax enable parsers tools like:
+  - Eslint, TypeScript, Tailwind, Prettier, and syntax highlighters etc
+- Could co-exist with with other lib with a thin extension wrapper
+- Could write JS logic in side the templates
+- JSX is designed as an ECMAScript feature and the similarity to XML is only for familiarity
+- Works for Server-Side-Render(SSR)
+
+
+## Trade-off
+
+- Embedding a new syntax in an existing language is not the plan. Therefore, it will always require a transpiler to have it work.
+
+## Use Your Creativity 🧠
+
+How would you twist JSX to create something that solve your problem? For example
+
+- File extension
+- Style classes
+- Reference
+- Reactivity
+- Virtual DOM
+- Reconciliation
+- Control flow
+- Sever rendering
+- the list goes on… :)
+
+## Addiontional Readings:
+
+If you find this interesting, here are some of the readings I went through and found interesting!
+
+[JSX](https://facebook.github.io/jsx/)
+
+[Demystifying SolidJS' JSX](https://www.youtube.com/watch?v=5du6jBlryIc&ab_channel=RyanCarniato)
+
+[Documentation - JSX](https://www.typescriptlang.org/docs/handbook/jsx.html)
+
+[RF21 - Ryan Carniato - SolidJS - Reactive JSX](https://www.youtube.com/watch?v=2iK9zzhSKo4&ab_channel=ReactFinland)
+
+[Introducing JSX - React](https://reactjs.org/docs/introducing-jsx.html)
+
+[react-engine vs other template engines](https://stackoverflow.com/questions/32619168/react-engine-vs-other-template-engines)
+
+[JSX (JavaScript) - Wikipedia](<https://en.wikipedia.org/wiki/JSX_(JavaScript)>)
+
+[https://github.com/airbnb/javascript/pull/985](https://github.com/airbnb/javascript/pull/985)
+
+[React/JSX as a server-side templating language](https://kentcdodds.com/blog/react-jsx-as-a-server-side-templating-language)
+
+---
+
+If you'd like to see a completed example, the entire source code for my website is [open source](https://github.com/wtLau).
+
+Feel free to [send me a message](https://www.brian-lau.ca/contact) if you have any questions or if I've missed anything.

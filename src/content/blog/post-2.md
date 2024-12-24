@@ -1,10 +1,9 @@
 ---
-title: Building an Impressive Front-End Developer Portfolio
-excerpt: In the competitive world of front-end development, a strong portfolio is your ticket to showcasing your skills, making a lasting impression on potential employers or clients, and advancing your career.
-publishDate: 'October 5 2023'
+title: 'Code Reviews'
+publishDate: '2022-07-19'
+excerpt: 'Code reviews ensure correctness, collaboration, and consistency while fostering trust and knowledge sharing among teams—key to scalable software.'
 tags:
-  - Web
-  - Web development
+  - Developemnt Process
 seo:
   image:
     src: '/post-2.jpg'
@@ -13,58 +12,118 @@ seo:
 
 ![Half open laptop on a desk](/post-2.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+> TL;DRs
 
-In the competitive world of front-end development, a strong portfolio is your ticket to showcasing your skills, making a lasting impression on potential employers or clients, and advancing your career. Your portfolio is your digital business card, and it should be a reflection of your talent, creativity, and expertise. In this post, we'll walk you through the steps to create an impressive front-end developer portfolio that will help you stand out in the crowd.
 
-## 1. Showcase a Diverse Range of Projects
+Code reviews enhance code quality, ensure correctness, and foster collaboration. They balance engineering velocity with benefits like consistency, knowledge sharing, and team trust. Best practices include clear communication, small changes, and automation to streamline the process.
 
-Your portfolio should be a testament to your versatility. Include a variety of projects that demonstrate your skills in different areas of front-end development. Consider including projects like:
+## Introduction
 
-- **Responsive Websites:** Showcase your ability to create websites that adapt seamlessly to various screen sizes and devices.
+Code review is a process in which code is audited by the author's peers. It acts as a checkpoint before that piece of code merged into the codebase.
 
-- **Interactive Web Applications:** Feature web applications that engage users with dynamic features and functionalities.
+Code review not only has obvious benefits such like discovering early bugs, verify legitmacy of the implementation, qucik demo. It also has subtles effects like collabration within the platform, aligning the expectations, encourgage open healthy disucussions, build relationship and trust with teamates.
 
-- **E-commerce Websites:** If you've worked on e-commerce sites, include them to demonstrate your expertise in handling complex web development tasks.
+<!--
+- Start with a clear and gripping headline to stir up interest
+- Tell your readers what they will gain or learn from your article
+- Include number from statistics to build trust
+-->
 
-- **Open Source Contributions:** Highlight your involvement in open-source projects or contributions to online coding communities.
+## Main Concept
 
-## 2. Highlight Your Coding Skills
+### Code Review Workflow
 
-Your portfolio should provide a clear view of your coding proficiency. Consider the following:
+Different organzation have different take on the code review process and they can happen in various stages of software development. Some might even have highly automated continuous integration flow with pre-commit checks, linting systems, commit semantics, test runners, build preview before getting to the inital step describe below. This is a typical workflow from my own experience:
 
-- **Clean and Organized Code:** Present your code in a clean and well-organized manner. Use proper indentation, comments, and coding standards.
+1. Workspace - Author made a PR/MR and pushed code to a code management tool like Github or Gitlab
+2. Author - Typically there's will be some sort of automation flows that validate if the codebase indeed works with your changes applied. Then author will verify the changes diff and made self correction base on the changes.
+3. Reviewer - Once it has passed the self-review process, the MR/PR will be notified to a broader pool of developers or/and assigned to the owner of the piece of the software. They will be making some generic informational comments or sometimes explicit resolution.
+4. Amend - The disucussions might go back and fourth on the code review tool until a concense is made, or if changes are applied.
+5. Approve - When the reviewers are staisfyied with the latest state of the logic, they will mark this PR/MR with an approved (or looks good to me) status
+6. Commit - It is now ready to move to next stage (passing to QA or merge to master) after all comments are resolved and changes are approved by all reviewer
 
-- **Use of Version Control:** Showcase your use of version control systems like Git and GitHub to demonstrate your collaboration and code management skills.
+You may wonder "my code is working", whats the point of all this hassel when trying to get something up and running. In the following section I will be explaining the philsophy behind this incentive.
 
-- **Code Samples:** Include snippets of code from your projects to give visitors an insight into your coding style and problem-solving abilities.
+### Whats the Point of Code Review
 
-## 3. Emphasize Responsive Design
+Now we have looked at the typical code review process, lets explore why this is an important principle to scaling softwares.
 
-As a front-end developer, responsive design is paramount. Ensure that your portfolio itself is a shining example of responsive design. It should look and function flawlessly on a variety of devices, including desktops, tablets, and smartphones.
+Frist, we need to acknowledge that "code is a liability", what it provide might be an asset, but down to its core, code is simply a mainenance task for someone in the future. Much like a car, it will take you from point A to B but it actually showed up a liability on your account. Or like the fuel that an rocket carries, it has tremedous weight, but it is necessary for it to reach space.
 
-## 4. User Experience (UX) Matters
+There's a three deimensional complexity when a certain peice of code changed:
 
-Front-end development is not just about writing code; it's about creating a great user experience. Explain your thought process behind the user interface (UI) and UX decisions you made in your projects. Discuss how you optimized performance and accessibility.
+1. On a team level
 
-## 5. Document Your Projects
+- It could be comprehened by your peers
+- It's doing whats it supposed to do
+- A team/squad member would often be involvd in this process
 
-Accompany each project with a detailed description. Explain the project's goals, your role in it, the technologies and tools you used, and any challenges you overcame. This documentation provides context and depth to your work.
+2. On a systemic level
 
-## 6. Regularly Update Your Portfolio
+- It is appropriate for this part of the codebase
+- In frontend development, it could be design system, pages, routing, accessibility, state management etc...
+- A tech lead or an owner whom has deep expertise in such directory should be overseeing all the changes
 
-A stagnant portfolio can give the impression of inactivity or lack of progress. Regularly update your portfolio with your latest work and projects. Remove outdated or less impressive work to keep your portfolio relevant and impactful.
+3. On a language level
 
-## 7. Test and Optimize Load Times
+- The code is written in a manner that follows language's style and best practices
+- In frontend development, this could be largely automated with tools like Eslintc, Prettier, and TypeScript
 
-Slow-loading websites can turn visitors away. Ensure your portfolio loads quickly by optimizing images and using proper techniques to minimize load times.
+It sounds very cumbersome to have an approveal from all three levels of reviews, and to be frank, it sometimes is. In reality, it will often takes one person to assume all three roles because the author would be able to ssume the latter two roles once they have been sufficiently knowledge within the system and language. A code review is then merely requiring a "looks good to me" signature on code correctness and general validity from a reviewer.
 
-## 8. Seek Feedback
+I have not encounter any code review that requires more than one approvals in my short professional career, but I foresee this might be common among large scale systems that requires stewardship towards sub atomic systems.
 
-Before finalizing your portfolio, seek feedback from peers, mentors, or online communities. Constructive criticism can help you refine your portfolio and make it even more impressive.
+I hope above clarify the underlying reason for code review. Now, lets explores the advantages...
 
-## 9. Personalize Your Portfolio
+### Code Review Benefits
 
-Your portfolio is not just about your work; it's also about you. Add a personal touch by including an **"About Me"** section that tells your story, your passions, and what makes you unique as a front-end developer.
+Many companies and open source projects have code review as one of mechanism to review a change in the codebase. Once you have experienced it, the benefits of this practice is rather obvious, though, it have a cost and effect on engineering velocity(time-to-production) since its introduced additional complexity for the introduction of new code into a codebase.
 
-Remember, your front-end developer portfolio is an ongoing project. Keep refining it, stay up-to-date with the latest trends, and let it evolve as your skills and experience grow. An impressive portfolio not only serves as a testament to your abilities but also opens doors to exciting opportunities in the world of front-end development.
+A well ochatrasted code review process and a culture that embrace it should provide these benefits:
+
+- Coreectness- validity of the code
+- Readablity- comprehened by peers
+- Consistency- enforcing certain code style
+- Ownership- reliability among team
+- knowledge Sharing- mutual exchange of information
+- A record of change- documentation this timestamp
+
+### Best Practices
+
+Code review is ineffitably a process that creates fraction and drag to merging new code. In order to make it scale with enjoyable experience we should froster a culture of keeping this process smooth and nimble.
+
+- Be polite and professional
+- Write small changes
+- Include clean and easy to read change descriptions
+- Keep reviewer to a minium
+- Automate related toolchains
+
+<!-- - outline structure
+- write sub-headings
+- Add images
+- Bulleted list
+- bold and italic
+- code snippets
+- deeper level of sub-headings -->
+
+### Conclusion
+
+<!--
+- Short recap
+- My opinion and experience
+- Ask about their opinion
+ -->
+
+Code review is a critical piece of process that acts as a form of open communication with peers. In my experience, I would prefer environment where code review is an essential part of the development process. I feel like there's alot to observe and learn from your peer's coding styles and approaches to solve a problem. At times, I can submit reviews to catch early bugs. It implicitly synchonize the team's code quality, including small changes, fast feedback loop, hence maintain developer's satisfaction and production velocity.
+
+That's it! Hopefully, you've learn something new about code review!
+
+## Reference resources
+
+- [Software Engineering at Google](https://learning.oreilly.com/library/view/software-engineering-at/9781492082781/)
+
+---
+
+If you'd like to see a completed example, the entire source code for my website is [open source](https://github.com/wtLau).
+
+Feel free to [send me a Tweet](https://twitter.com/brian_wtLau) if you have any questions or if I've missed anything.

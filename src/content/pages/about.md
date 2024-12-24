@@ -10,7 +10,11 @@ seo:
 
 ![Alt text for image](/about.jpeg)
 
-**Note!:** This about page is entirely fictional and created for the purpose of showcasing [Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/).
+My name is Brian, and I am currently living in North Vancouver, Canada.
+
+Professionally, I am an web developer with an obsession for well-crafted design, building seamless experiences for users. I am big on growth and teamwork. If we are gonna build the future, lets have some fun doing it!
+
+When I am not in front of computer, I spend my time body building, making pour-over coffee, and enjoying time with friends and family in Vancouver.
 
 ## Ethan Donovan - Web Developer based in Estonia
 

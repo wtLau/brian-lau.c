@@ -1,10 +1,8 @@
 ---
-title: 'Ensuring Cross-Browser Compatibility for a Seamless User Experience'
-excerpt: A website that functions flawlessly across different browsers not only enhances user satisfaction but also broadens its reach.
-publishDate: 'October 7 2023'
+title: 'How To Get Started'
+publishDate: '2023-10-26'
+excerpt: "Looking back, here's the advice I'd share for thriving in the tech world if I were starting from scratch."
 tags:
-  - Web
-  - UX
   - Web development
 seo:
   image:
@@ -14,40 +12,30 @@ seo:
 
 ![Wavy lines on a dark background](/post-4.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+If you are looking to break into tech and feeling overwhelmed by the ocean of content, I can offer a few suggestions for you to consider. If time teleportation were a real thing, most of the tips below are what I would suggest to myself to start again from today.
 
-In the dynamic landscape of the internet, where users access websites through a myriad of browsers and devices, ensuring cross-browser compatibility is crucial for delivering a seamless user experience. A website that functions flawlessly across different browsers not only enhances user satisfaction but also broadens its reach. Here are some key strategies to ensure your web project thrives on diversity and provides a consistent experience for all users:
+## Write Down Your Why
 
-### 1. **Test Across Multiple Browsers and Versions:**
+This will be a long journey, whether you are picking up a brand new career or switching from another role. You will need a strong statement on why this matters to you. It will help you along the way and act as a guiding star. It's where you want to aim and will lead to a story you want to portray. Start with why, then figure out the hows and act on the whats.
 
-Before launching your website, thoroughly test it on popular browsers such as Google Chrome, Mozilla Firefox, Safari, Microsoft Edge, and Opera. Additionally, consider testing on various versions of these browsers to identify and address compatibility issues that may arise.
+## Pick a Learning Path
 
-### 2. **Responsive Design:**
+Since you are starting new, you would have no idea where to start, and the online information is chaotic with lots of different jargon that seems important, like frontend, backend, TypeScript, Data Structures and Algorithms, or even Rust. You might be confused and unsure about the path to take. Fortunately, there are communities that help bridge this gap, offering comprehensive guides and tutorials to lead the way into the beginner village. Two platforms I constantly hear good things about are freecodecamp and the Odin project. They are completely free and have a decent community size, which would be very useful to form a team of individuals on a similar journey (more on this below). You could go quite far with one of these resources before needing to explore other things on the map. Ideally, this will take you at least 3 months or more because it can be quite overwhelming at first.
 
-Adopt a responsive design approach to ensure your website adapts to different screen sizes and resolutions. Utilize flexible grids and layouts, CSS media queries, and fluid images to create a visually appealing and functional experience across desktops, laptops, tablets, and smartphones.
+## Understand the Concepts Deeply
 
-### 3. **Graceful Degradation and Progressive Enhancement:**
+As you can only connect the dots backward, spend time investigating at each dot. Learn the reasons why a certain thing is done in a particular way, either in the mind or in code. Try to simulate things and make assumptions on the current topic. Let's say you already know A, and now you are learning B. Think about how A will work with B. To your knowledge, everything is somewhat connected. Perhaps what changes is only the shape or form. Try to learn the same concept from a different point of view, and maybe you will get a better understanding of what's going on. No, you don't need a computer science degree. It's just an expensive piece of paper. What you need is the knowledge within, and there are tons of resources to learn from without listening to a boring professor who speaks at 0.5 speed. Be curious, stay humble.
 
-Implement graceful degradation and progressive enhancement techniques to accommodate varying levels of browser capabilities. Graceful degradation involves building a website with advanced features that may not be supported by older browsers but still ensuring a basic, functional experience. Progressive enhancement, on the other hand, starts with a fundamental version and progressively adds features for modern browsers.
+## Recruit a Close Team
 
-### 4. **Vendor Prefixes and Standard Compliance:**
+There are a few reasons I say forming a team would be really great for the continuity of learning and growth. In a pragmatic sense, working together as a team resembles the dynamics at work. You will be working closely within a team, and your influence will grow to a point where you have to interacts with other teams or steakholder. You need to build the calluses of working on a task with a group of people from different backgrounds. Collaboration is key to making great software. Building this skill is a necessity for your career. On a personal level, it promotes psychological safety when you know there are teamates that could help you along the way. Most often, the key to a working solution is just a few feedbacks from your peers, they may be able to see your blind spots. Forming a support group and working towards the same goal is always motivating, especially at times when it gets difficult.
 
-While utilizing cutting-edge CSS and JavaScript features, be mindful of vendor prefixes. Prefixes like `-webkit-` or `-moz-` are often necessary for experimental or browser-specific features. However, it's crucial to implement standardized versions of these features once they become widely supported.
+To form a team, you could simply go out to different online/offline communities and ask if there is anyone on a similar journey willing to commit to working together. It could be building a project together, code reviewing each other's pull requests, reviewing/showcasing the concepts one recently acquired, or doing mock interviews. The important thing is the group meets at least once a week and does it for at least 3 months. I can assure you this will make your learning a lot more fun.
 
-### 5. **Regularly Update Third-Party Libraries and Frameworks:**
+## Don't Look at Tech Influencers
 
-If your website relies on third-party libraries or frameworks, ensure they are up-to-date. Developers frequently release updates to address compatibility issues and improve performance. Staying current with these updates helps maintain compatibility across various browsers.
+One last point I'd like to share is to try your best to avoid influence from social media. There is a lot of content out there, and it's more of a distraction than motivation in most cases. At best, you might get a piece of information that is a useful trick. On average, you might get something that could potentially be useful one day, but in the near term, it's completely irrelevant. At worst, you receive the wrong intel. Just focus on what you need to know, and only when you need something new should you take a look. Though, I have to confess I am better at saying this than doing it.
 
-### 6. **Browser-Specific CSS and JavaScript:**
+## Conclusion
 
-Identify browser-specific issues and use conditional CSS and JavaScript to address them. This technique allows you to apply specific styles or scripts tailored to particular browsers, ensuring a consistent and optimized experience for each.
-
-### 7. **User-Agent Detection:**
-
-Employ user-agent detection to identify the browser and device a user is using. While this method should be used sparingly, it can be helpful for implementing specific optimizations or workarounds for known issues with certain browsers.
-
-### 8. **Regular Testing and Monitoring:**
-
-Even after the initial launch, periodically test your website on different browsers and devices. Browser updates and changes can introduce new compatibility challenges. Regular monitoring helps you identify and address issues promptly, maintaining a seamless user experience over time.
-
-In conclusion, achieving cross-browser compatibility is an ongoing commitment that requires careful planning, testing, and adaptation. By prioritizing these strategies, you can ensure that your website provides a consistent and enjoyable experience for users, regardless of the browser they choose to use. Embracing diversity in the digital realm ultimately leads to a broader audience and increased user satisfaction.
+As you have noticed, my tips aren't necessarily a step-by-step guide on how I would get started. One reason is because you probably already have an idea of what you need to do to begin with. I feel like this is something I would tell my younger self when I got started. Identify why you want to break into tech, pick a route, immerse yourself in new concepts, find friends, and don't get distracted. Good luck and happy coding!

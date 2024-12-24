@@ -1,10 +1,9 @@
 ---
-title: 'Unveiling the Magic: Exploring the Latest CSS Features'
-excerpt: 'Highlight and explain the newest CSS features or updates. Include examples and demonstrate how these features can enhance the styling and layout of web pages.'
-publishDate: 'October 11 2023'
+title: 'Introduction to Fetch'
+publishDate: '2023-10-25'
+excerpt: "Exploring the Fetch API's intricate components in my personal journey, aiming to explain their complexities for a better understanding."
 tags:
-  - CSS
-  - Web development
+  - web
 isFeatured: true
 seo:
   image:

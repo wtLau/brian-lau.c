@@ -1,72 +1,119 @@
 ---
-title: The Ultimate Front-End Developer Career Roadmap
-excerpt: Are you interested in embarking on a rewarding career as a front-end developer or looking to advance your existing skills in this dynamic field?
-publishDate: 'Dec 15 2023'
+title: 'Giving Back by Mentoring'
+publishDate: '2021-08-27'
+excerpt: 'I am offering voluntary and accessible mentorship to aspiring developers'
 tags:
-  - Web
-  - Guide
+  - Web development
 seo:
   image:
     src: '/post-11.jpg'
-    alt: Empty road into the Horizon
+    alt: Mountains
 ---
 
-![Empty road into the Horizon](/post-11.jpg)
+![Mountains](/post-11.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+Hello, thank you for checking this blog post. In this blog, I hope to help clarify to the difference in **server state** and **client state**, and suggest a pattern to reduce engineer time and boost developer experience to managing state.
 
-Are you interested in embarking on a rewarding career as a front-end developer or looking to advance your existing skills in this dynamic field? Front-end development is an exciting and ever-evolving realm of the tech industry, and to succeed, having a well-defined roadmap can make all the difference. In this post, we'll provide you with "The Ultimate Front-End Developer Career Roadmap" to guide you through the journey from a beginner to an expert.
+As a developer, it is important to recognize the fact that these two are inherently different problems and should be treated differently. I've made the mistake of putting every data in a state management tool as a centralized source of truth in hope to make things simpler. As you'd imagine, it's a nightmare to cover edge cases and ensure everything is in sync and up to date. **Server state should be treated as cache and grant the client with quick access**.
 
-## Stage 1: Getting Started
+## Common State Types
 
-**Learn HTML, CSS, and Basic JavaScript:** Begin your journey by mastering the fundamentals. Understand how HTML, CSS, and JavaScript work together to create web pages.
+Below is a list of common state that may exist in your application.
 
-**Create Simple Websites:** Practice by building basic websites and web pages. Get comfortable with the structure and layout.
+- Client State
+  - State that's only useful for control interactive part of the UI
+  - E.g: Theme, Dark mode, modals open
+- Server Cache State
+  - State persisted and owned by the server, and accessed by the client
+  - E.g: API calls, Response data
+- Component state
+  - State that component (React) needs to detect changes for re-rendering
+  - E.g: Values, loading
+- Form State
+  - Various state to validate a form
+  - E.g: isPristine, isTouch, validation,
+- URL State
+  - State persisted by the browser
+  - E.g: Query parameter, pagination, page ID
+- State Machine
+  - A finite-state machine refer to a mathematical model of computation
 
-**Version Control:** Learn the basics of version control with Git and GitHub to track changes in your code.
+## Different State Management Tools
 
-**Responsive Web Design:** Understand the principles of responsive design to make your websites look great on all devices.
+Here's is list of popular tools that are being used by the industry.
 
-## Stage 2: Building a Solid Foundation
+- [useState/Reducer + Context Hook](https://reactjs.org/docs/hooks-intro.html)
+- [Redux](https://redux-form.com/7.0.3/docs/gettingstarted.md/)
+- [Mobx](https://mobx.js.org/README.html)
+- [xState](https://github.com/davidkpiano/xstate)
+- [jotai](https://github.com/pmndrs/jotai)
+- [React-Query](https://react-query.tanstack.com/)
+- [SWR](https://swr.vercel.app/)
+- [Apollo Client](https://www.apollographql.com/docs/react/)
 
-**Advanced JavaScript:** Dive deeper into JavaScript, learning about ES6 features, asynchronous programming, and the DOM (Document Object Model).
+## Property of App State Vs Server State
 
-**CSS Preprocessors:** Explore CSS preprocessors like SASS or LESS to streamline your stylesheets.
+Below are some of the main difference between an client state and server state:
 
-**Learn a Front-End Framework:** Start with a framework like Tailwind CSS to enhance your website-building capabilities.
+| App             | Server               |
+| --------------- | -------------------- |
+| Non-Persistent  | Remotely Persisted   |
+| Synchronous     | Asynchronous         |
+| Client-Owned    | Shared Ownership     |
+| Reliable Update | Potentially Outdated |
 
-**8. Web Performance:** Study web performance optimization techniques to ensure fast-loading websites.
+## Let's Cut to the Chase!
 
-## Stage 3: Mastering Modern Front-End Technologies
+Both [React-Query](https://react-query.tanstack.com/) and
+[SWR](https://swr.vercel.app/) provide good solution. And [Apollo Client](https://www.apollographql.com/docs/react/) if you're using GraphQL. Give it a try, I believe you would be happy to use any of these.
 
-**JavaScript Frameworks:** Learn popular front-end frameworks like React, Angular, or Vue.js.
+They will not only help you remove a handful lines of complicated code and make your application more maintainable, but have a direct impact for your users because it will feel faster and more responsive.
 
-**Build Single Page Applications (SPAs):** Create interactive web applications using your chosen framework.
+The most beautiful thing is that there will be only 1 request sent to the API, because they use the same key and the request is deduped, cached and shared automatically.
 
-**Package Managers:** Get comfortable with package managers like npm and yarn to manage your project dependencies.
+[SWR](https://swr.vercel.app/)
 
-**Module Bundlers:** Explore module bundlers like Webpack or Parcel for efficient code organization.
+```jsx
+import useSWR from 'swr'
 
-## Stage 4: Specialization and Advanced Topics
+const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
-**Advanced CSS:** Dive deep into CSS with techniques like Flexbox, Grid, and CSS-in-JS.
+function Profile() {
+  const { data, error } = useSWR('/api/user/123', fetcher)
 
-**Accessibility:** Ensure your websites are accessible to all users by learning WCAG guidelines.
+  if (error) return <div>failed to load</div>
+  if (!data) return <div>loading...</div>
 
-**Performance Optimization:** Continue improving performance with advanced techniques like lazy loading and code splitting.
+  // render data
+  return <div>hello {data.name}!</div>
+}
+```
 
-**Testing and Debugging:** Master unit testing and debugging tools for front-end development.
+[React-Query](https://react-query.tanstack.com/)
 
-## Stage 5: Real-World Experience and Career Advancement
+```jsx
+import { useQuery } from 'react-query'
 
-**Building Projects:** Create a portfolio of real-world projects to showcase your skills.
+export default function App() {
+  const { isLoading, isError, data, error } = useQuery('todos', fetchTodoList)
 
-**Networking:** Attend meetups, conferences, and online communities to connect with other front-end developers.
+  if (isLoading) return <span>Loading...</span>
 
-**Soft Skills:** Hone your communication and collaboration skills, as they are invaluable in a professional setting.
+  if (isError) return <span>Error: {error.message}</span>
 
-**Job Search:** Prepare a strong resume and online portfolio. Start applying for front-end development positions or freelance opportunities.
+  // We can assume by this point that `isSuccess === true`, and render data
+  return (
+    <ul>
+      {data.map((todo) => (
+        <li key={todo.id}>{todo.title}</li>
+      ))}
+    </ul>
+  )
+}
+```
 
-**Continuous Learning:** Stay up-to-date with the latest front-end technologies and trends. Consider advanced topics like Progressive Web Apps (PWAs) and serverless architecture.
+## Thank You for Reading!
 
-Remember, the journey of a front-end developer is continuous. The field is always evolving, and staying curious and adaptable is key to your success. The ultimate career roadmap is not a one-size-fits-all guide, but it provides a clear path to help you navigate the world of front-end development. By following this roadmap and continuously learning and improving, you can build a rewarding and successful career in this dynamic field. Good luck on your journey!
+While state management has been nuanced in building applications at scale, I think having a good grasp of various types of state and understanding their trade-offs would help developing apps easier.
+
+I hope you find this post useful, and if you have any comment or suggestion, feel free to tweet or make a pull request. Cheers.

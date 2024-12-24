@@ -1,11 +1,9 @@
 ---
-title: Exploring the Future of Front-End Development with Astro.js
-excerpt: In recent years, we've seen the rise of various tools and frameworks that have revolutionized the way we build web applications. One such exciting addition to the front-end development landscape is Astro.js.
-publishDate: 'October 10 2023'
+title: 'Learning Rust'
+publishDate: '2023-05-23'
+excerpt: "Brian's thought process in the shift to Rust for frontend development, highlighting its benefits in control, safety, reliability, and performance."
 tags:
-  - Web
-  - UX
-  - Web development
+  - Rust
 seo:
   image:
     src: '/post-7.jpg'
@@ -14,38 +12,18 @@ seo:
 
 ![Bright lines on a dark background](/post-7.jpg)
 
-**Note:** This post was created using Chat GPT to demonstrate the features of the _[Dante Astro.js theme functionality](https://justgoodui.com/astro-themes/dante/)_.
+## Introduction and Background
 
-Front-end development is a dynamic field that continually evolves to meet the demands of modern web development. In recent years, we've seen the rise of various tools and frameworks that have revolutionized the way we build web applications. One such exciting addition to the front-end development landscape is Astro.js. In this post, we'll explore what Astro.js is and how it promises to shape the future of front-end development.
+I am not a Rust developer yet, but within a year or two, I plan to shift my focus to Rust for all my software development projects. Over the past few years, I have worked with various software technologies, including robotics operating systems, Linux Ubuntu, NeoVim, and web systems. One common theme I've observed is that software systems can be overwhelming and complex, with only a few individuals truly understanding the overall architecture. Assumptions made by those unfamiliar with the system can lead to anomalies over time, resulting in technical debt, migrations, and reduced efficiency. Simply throwing more resources at the problem, such as increasing computational power, doesn't solve the underlying issues.
 
-## What Is Astro.js?
+## The Limits of Computation Resources
 
-Astro.js is a new static site generator and front-end framework that is gaining traction within the web development community. It was created by the team at Vercel, the company behind popular tools like Next.js and Vercel Hosting. Astro.js aims to provide a new approach to front-end development that combines the best of both static site generation (SSG) and server-rendered frameworks.
+Computation resources are finite, and there comes a point where adding more hardware no longer scales. Previously, I assumed that modern systems would scale effortlessly with advanced distribution systems and good engineering practice. However, as we push the boundaries of computer science, there are physical limitations that require tremendous effort to overcome, potentially taking decades or centuries. Nevertheless, it is worth exploring how we can write better instructions to minimize waste. In the past, only a gifted group of coders who understood low-level programming language details could accomplish this, but today, open-source concepts and abundant online resources make it more accessible.
 
-## Key Features of Astro.js
+## How Rust Enhances Frontend Development
 
-1. **Faster Loading Times:** Astro.js takes a unique approach by only sending the JavaScript required for a specific page, reducing the initial load time and enhancing performance.
+As a frontend developer, TypeScript is my primary tool. While its dynamic nature and fast iteration speed can be advantageous, it can also introduce complexity if not managed intentionally. The need for improved control, safety, reliability, and performance has become more apparent. Rust, with its ability to pierce through abstractions, offers a creative environment for designing great software. The bridge between Rust and the frontend is WebAssembly (WASM), a binary format that runs in web browsers. WASM is already supported in various web development environments, and although it may not replace major workflows, it is an attractive tool for handling frontend use cases such as large data processing, concurrent data streams, cross-platform logic, and security-sensitive vulnerabilities. In the long run, I believe Rust will handle computation in large-scale frontend codebases, while JavaScript/TypeScript will maintain their role in interactivity with HTML and CSS.
 
-2. **Partial Hydration:** It allows for selective hydration of components, optimizing the interactivity of your web pages while maintaining fast loading speeds.
+## Conclusion and Learning Rust as a Frontend Developer
 
-3. **Universal Rendering:** Astro.js enables you to use a single codebase for both server-rendered and static sites, simplifying development and maintenance.
-
-4. **Framework Agnostic:** It's designed to work with any JavaScript framework or library, allowing developers to choose their preferred tools.
-
-5. **Incremental Adoption:** Astro.js is flexible and can be incrementally adopted into existing projects, making it accessible for developers transitioning from other frameworks.
-
-## The Future of Front-End Development with Astro.js
-
-1. **Enhanced Performance:** Astro.js's focus on performance optimization will be a driving force in the future of front-end development. Faster-loading web applications are crucial for user retention and SEO ranking.
-
-2. **Seamless Integration:** As Astro.js gains popularity, we can expect more integration with popular JavaScript libraries and frameworks, making it even easier to use in a variety of projects.
-
-3. **Simplified Development Workflow:** Astro.js's universal rendering and framework-agnostic approach will streamline the development process, reducing the complexity of maintaining web applications.
-
-4. **Improved SEO:** With faster loading times and server-rendered content, Astro.js can significantly boost SEO performance, making it a preferred choice for websites aiming to rank higher in search engine results.
-
-5. **Community Growth:** As more developers and companies adopt Astro.js, we can anticipate a growing community that will contribute to its development and create a rich ecosystem of extensions and plugins.
-
-## Conclusion
-
-Astro.js is a promising addition to the front-end development landscape, offering a new approach that prioritizes performance, developer experience, and future scalability. As the web development community continues to evolve, Astro.js is well-positioned to play a significant role in shaping the future of front-end development. Whether you're an experienced developer or just starting your journey, keeping an eye on Astro.js and exploring its capabilities could be a valuable investment in your web development toolkit.
+In conclusion, my plan is to transition to Rust for my software development projects. I see Rust as a tool that offers better control, safety, reliability, and performance in frontend development through WebAssembly. I anticipate that Rust will become the standard for managing logic in large-scale frontend codebases, while JavaScript/TypeScript will continue to handle interactivity. Although learning Rust as a frontend developer presents challenges, it is certainly achievable with dedication and practice. Cheers! 🦀
