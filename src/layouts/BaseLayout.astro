@@ -21,6 +21,8 @@ const { showHeader = true, ...head } = Astro.props;
                 document.documentElement.classList.add('dark');
             }
         </script>
+        <Analytics/>
+        <SpeedInsights/>
         <ClientRouter />
     </head>
     <body class="bg-main text-main">
